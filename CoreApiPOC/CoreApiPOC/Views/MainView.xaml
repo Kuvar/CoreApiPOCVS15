@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CoreApiPOC.Views;assembly=CoreApiPOC"
+             xmlns:master="clr-namespace:CoreApiPOC;assembly=CoreApiPOC"
+             x:Class="CoreApiPOC.Views.MainView"
+             xmlns:viewModelBase="clr-namespace:CoreApiPOC.ViewModels.Base;assembly=CoreApiPOC"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
+             BackgroundColor="#FF5733" 
+             NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationColor}"/>
+                <Setter Property="BarTextColor" Value="Color.Green"/>
+            </Style>
+        </ResourceDictionary>
+    </MasterDetailPage.Resources>
+    <MasterDetailPage.Master>
+        <master:MasterPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:RegistrationView />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
